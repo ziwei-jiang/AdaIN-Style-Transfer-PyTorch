@@ -63,3 +63,15 @@ optional arguments:
   --cuda                Using GPU to train
 ```
 
+
+Sample Results
+----------------------------
+
+### Test Output
+![grid1](https://github.com/Maggiking/AdaIN-Style-Transfer-PyTorch/blob/master/images/grid1.png)
+
+### Different of Blend
+![grid2](https://github.com/Maggiking/AdaIN-Style-Transfer-PyTorch/blob/master/images/grid2.png)
+
+
+
