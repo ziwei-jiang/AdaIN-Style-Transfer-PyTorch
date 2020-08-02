@@ -63,6 +63,23 @@ optional arguments:
   --cuda                Using GPU to train
 ```
 
+Useful Tool
+----------------------------
+Make grid of images from the selected images in a directory
+
+```
+$ python make_grid.py --r $NUM_ROW --c $NUM_COL --dir $DIR
+
+usage: make_grid.py [-h] [--dir DIR] [--r R] [--c C] [--size SIZE]
+
+optional arguments:
+  -h, --help   show this help message and exit
+  --dir DIR    The directory for the images
+  --r R        Numer of rows
+  --c C        Numer of columns
+  --size SIZE  Size per thumbnail
+```
+
 
 Sample Results
 ----------------------------
@@ -70,7 +87,7 @@ Sample Results
 ### Test Output
 ![grid1](https://github.com/Maggiking/AdaIN-Style-Transfer-PyTorch/blob/master/images/grid1.png)
 
-### Different of Blend
+### Different level of Blend
 ![grid2](https://github.com/Maggiking/AdaIN-Style-Transfer-PyTorch/blob/master/images/grid2.png)
 
 
