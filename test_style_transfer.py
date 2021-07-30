@@ -29,12 +29,13 @@ if __name__ == '__main__':
 	input_image = Image.open(opt.input_image)
 	style_image = Image.open(opt.style_image)
 	output_format = opt.input_image[opt.input_image.find('.'):]
-
+	out_dir = './results/'
+	os.makedirs(out_dir, exist_ok=True)
 	with torch.no_grad():
 		vgg_model = torch.load('vgg_normalized.pth')
 
 		net = StyleTransferNet(vgg_model)
-		net.decoder.load_state_dict(torch.load(opt.weight_file))
+		net.decoder.load_state_dict(torch.load(opt.weight))
 
 		net.eval()
 
@@ -52,6 +53,6 @@ if __name__ == '__main__':
 		out_tensor = net([input_tensor, style_tensor], alpha = opt.alpha)
 
 
-		save_image(out_tensor, './results/' + opt.input_image[opt.input_image.rfind('/')+1: opt.input_image.find('.')]
+		save_image(out_tensor, out_dir + opt.input_image[opt.input_image.rfind('/')+1: opt.input_image.find('.')]
 								+"_style_"+ opt.style_image[opt.style_image.rfind('/')+1: opt.style_image.find('.')]
 								+ output_format)

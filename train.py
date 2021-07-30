@@ -38,7 +38,7 @@ def main():
 
 	if opt.resume != 0:
 		check_point = torch.load(check_points_dir + "check_point_epoch_" + str(opt.resume)+'.pth')
-		net.load_state_dict(check_point['net'])
+		net.decoder.load_state_dict(check_point['decoder'])
 		decoder_optimizer.load_state_dict(check_point['decoder_optimizer'])
 		it, running_losses = check_point['it'], check_point['running_losses']
 
